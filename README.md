@@ -8,5 +8,5 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 ## Getting the bot running
 ### Method 1
 #### Prerequisites
-..* A Free Discord Account
-..* Installed [node.js](https://discordjs.guide/preparations/#installing-node-js)
+* A Free Discord Account
+* Installed [node.js](https://discordjs.guide/preparations/#installing-node-js)
