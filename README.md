@@ -59,4 +59,4 @@ You can now navigate to each day and fill in the values, here is what you have t
 * The teacher has to be the teacher with their title and their name. Note: It can only be two words. Example: "Mr Mark" has to be used and "Mr Jacob Mark" cannot be used. A way to bypass that would be to use "Mr Jacob_Mark"
 * The link would be the zoom link for the lesson or the location of your classroom. If you put "free" in that section the code would automatically say it is a free period. Note: It can only be one word. Example: "Floor Two" cannot be used so "Floor_Two" has to be used instead.
 
-After filling out these values, your Lesson Bot should be complete!
+After filling out these values, your Lesson Bot should be complete! Use the `.help` command to get started!
