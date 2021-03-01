@@ -17,6 +17,6 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 ![Create Application](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/createApplication.png)
 3. Click the "Bot" section on the left panel and click "Add Bot".
 4. Go to "OAuth2" section on the left panel and tick the "Bot" box in the "Scope" section. 
-![]()
+![Scope](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/scope.png)
 5. Copy the url and paste it on another tab. Select the server you just created or an existing one and click "Authorise". Complete the Captcha and head back to the other tab, where you are on your server. You should see that your bot has now arrived to the server!
-![]()
+![Adding bot to Server](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/addToServer.png)
