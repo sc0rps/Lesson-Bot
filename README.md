@@ -12,5 +12,5 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 * Installed [node.js](https://discordjs.guide/preparations/#installing-node-js)
 ### Getting the Bot Running
 1. Head over to the [Discord Developer Portal](https://discord.com/developers/applications/) and create a new application.
-[Create Application](https://github.com/sc0rps/Lesson-Bot/blob/main/readMeImages/createApplication.png)
+[Create Application](https://github.com/sc0rps/Lesson-Bot/blob/main/readMeImages/createApplication.png?raw=true)
 2.
