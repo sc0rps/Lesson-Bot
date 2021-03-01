@@ -24,9 +24,9 @@ You have created your bot, but there is no code actually running for the bot to 
 This is the most easiest way of running your bot but it does have it drawbacks which includes having to keep your PC on to keep it running at all times.
 
 ### Prerequisites
-* A Free Discord Account
-* A Windows PC (Can release Mac instructions if needed)
+* A Windows PC 
 * Installed [node.js](https://discordjs.guide/preparations/#installing-node-js)
+* Done all previous steps
 
 ### Instructions
 1. Download [Lesson Bot Personal](https://github.com/sc0rps/Lesson-Bot/archive/v1.00.zip) and extract the folder to where you want.
