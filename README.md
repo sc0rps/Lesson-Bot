@@ -7,8 +7,8 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 
 ## Making the bot 
 1. Make a [Free Discord Account](https://discord.com/register) (if you don't have one already) and go to the [Discord Homepage](https://discord.com/app).  Press the "plus" icon if you have not created a server and follow these instructions:
-... Create My Own, For me and my friends, Enter a server name of your choice (Example: "Lesson Server"), and hit create!
-... You have now created your own server in Discord!
+1. Create My Own, For me and my friends, Enter a server name of your choice (Example: "Lesson Server"), and hit create!
+2. You have now created your own server in Discord!
 2. Head over to the [Discord Developer Portal](https://discord.com/developers/applications/) and create a new application with a name of your choice (Example: "Lesson Bot").
 
 ![Create Application](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/createApplication.png)
