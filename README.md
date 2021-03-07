@@ -34,11 +34,13 @@ This is the most easiest way of running your bot but it does have it drawbacks w
 * Done all previous steps
 
 ### Instructions
-1. Download [Lesson Bot Personal](https://github.com/sc0rps/Lesson-Bot/archive/v1.00.zip) and extract the folder to where you want.
+1. Download the latest version of Lesson Bot at the [releases section](https://github.com/sc0rps/Lesson-Bot/releases/) and extract the folder to where you want.
 2. Head over inside of the folder and select the top bar and type "cmd" and press enter.
+
 ![Directory](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/fileSelect1.png)
 ![Select Directory](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/fileSelect2.png)
 ![Typing cmd](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/fileSelect3.png)
+
 3. Type the following into the terminal, seperately:
 ```
 npm install discord.js
@@ -68,3 +70,6 @@ You can now navigate to each day and fill in the values, here is what you have t
 * The link would be the zoom link for the lesson or the location of your classroom. If you put "free" in that section the code would automatically say it is a free period. Note: It can only be one word. Example: "Floor Two" cannot be used so "Floor_Two" has to be used instead.
 
 After filling out these values, your Lesson Bot should be complete! Use the `.help` command to get started!
+
+## Updating
+This bot should (hopefully) get updates and instead of doing the whole process of installing, you can just copy and paste the new files to your directory. Note: you have to put your token and start/end period preferences back into the `config.json` file.
