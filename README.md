@@ -46,7 +46,7 @@ npm install sqlite3@5.0.0
 6. Once this is done, type `node .` into the terminal and it should say "The bot is online!". To stop the code running either close the terminal or "Ctrl + C" on the terminal.
 If you want do not want to host it on your PC, please follow [this guide](https://www.youtube.com/watch?v=e5Dyk3-4nio&ab_channel=1BestCsharpblog) on how to host it on an external website.
 
-## Database Setup
+## Database Setup and Key Information
 Well done! You set up the Lesson Bot! When you try and view your lessons it says "EMPTY" for every field. To change this you can do the `.help change` command to find out how to change each and every field. However, this can be time consuming. So what you can do is download a program called [DB Browser](https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-win32.zip). These are the instructions on how to use it:
 1. Open up the `.exe` file by the name of "DB Browser for SQLite"
 2. Click the "Open Database" button at the top and naviagate to your folder where the bot is stored and open up the `linksdb.db` file.
