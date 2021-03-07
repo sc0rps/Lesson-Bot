@@ -41,13 +41,20 @@ npm install discord.js
 ```
 npm install sqlite3@5.0.0
 ```
+Well done! You set up the Lesson Bot with self hosting! If you do not want to host it on your on system, follow [this guide](https://www.youtube.com/watch?v=e5Dyk3-4nio&ab_channel=1BestCsharpblog) on how to host it on an external website.
 4. Go back to the [Discord Developer Portal](https://discord.com/developers/applications/) and go on your application, then go to the "Bot" section on the right. Press copy under "Click to reveal token". This is a token which is exclusive to your bot and should be kept private. 
-5. Open up the `config.json` file and paste the token where it says "INSERT TOKEN HERE" inside the quotation marks.
+5. Open up the `config.json` file and paste the token where it says "INSERT TOKEN HERE" inside the quotation marks. You can also insert your start and end period number (the minimum is 0 and the maximum is 10).
 6. Once this is done, type `node .` into the terminal and it should say "The bot is online!". To stop the code running either close the terminal or "Ctrl + C" on the terminal.
 If you want do not want to host it on your PC, please follow [this guide](https://www.youtube.com/watch?v=e5Dyk3-4nio&ab_channel=1BestCsharpblog) on how to host it on an external website.
 
-## Database Setup and Key Information
-Well done! You set up the Lesson Bot! When you try and view your lessons it says "EMPTY" for every field. To change this you can do the `.help change` command to find out how to change each and every field. However, this can be time consuming. So what you can do is download a program called [DB Browser](https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-win32.zip). These are the instructions on how to use it:
+## Setup
+ Now, you have to setup things that would be **personal** to you. Follow these steps:
+1. Go back to the [Discord Developer Portal](https://discord.com/developers/applications/) and go on your application, then go to the "Bot" section on the right. Press copy under "Click to reveal token". This is a token which is exclusive to your bot and should be kept private. 
+2. Open up the `config.json` file (you can use a simple text editor such as Visual Studio Code or even Notepad) and paste the token where it says "INSERT TOKEN HERE" inside the quotation marks. 
+3. You can also insert your start and end period number (the minimum is 0 and the maximum is 10).
+4. Once this is done, type `node .` into the terminal and it should say "The bot is online!". To stop the code running either close the terminal or "Ctrl + C" on the terminal.
+
+When you try and view your lessons (use the `.help` command to view all commands) it says "EMPTY" for every field. To change this you can do the `.help change` command to find out how to change each and every field. However, this can be time consuming. So what you can do is download a program called [DB Browser](https://github.com/sqlitebrowser/sqlitebrowser/releases/download/v3.12.1/DB.Browser.for.SQLite-3.12.1-win32.zip). These are the instructions on how to use it:
 1. Open up the `.exe` file by the name of "DB Browser for SQLite"
 2. Click the "Open Database" button at the top and naviagate to your folder where the bot is stored and open up the `linksdb.db` file.
 3. Go click the "Browse Data" button on the second top row and it should open your different days!
