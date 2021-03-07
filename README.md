@@ -19,7 +19,7 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 ![Scope](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/scope.png)
 
 5. Copy the url and paste it on another tab. Select the server you just created or an existing one and click "Authorise". Complete the Captcha and head back to the other tab, where you are on your server. You should see that your bot has now arrived to the server!
-6. 
+
 ![Adding bot to Server](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/addToServer.png)
 
 You have created your bot, but there is no code actually running for the bot to actually do something.
