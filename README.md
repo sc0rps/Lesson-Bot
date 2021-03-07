@@ -10,11 +10,16 @@ You are able to input the time, subject, teacher and link to the class. In a fac
 ... Create My Own, For me and my friends, Enter a server name of your choice (Example: "Lesson Server"), and hit create!
 ... You have now created your own server in Discord!
 2. Head over to the [Discord Developer Portal](https://discord.com/developers/applications/) and create a new application with a name of your choice (Example: "Lesson Bot").
+
 ![Create Application](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/createApplication.png)
+
 3. Click the "Bot" section on the left panel and click "Add Bot".
 4. Go to "OAuth2" section on the left panel and tick the "Bot" box in the "Scope" section. 
+
 ![Scope](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/scope.png)
+
 5. Copy the url and paste it on another tab. Select the server you just created or an existing one and click "Authorise". Complete the Captcha and head back to the other tab, where you are on your server. You should see that your bot has now arrived to the server!
+6. 
 ![Adding bot to Server](https://raw.githubusercontent.com/sc0rps/Lesson-Bot/main/readMeImages/addToServer.png)
 
 You have created your bot, but there is no code actually running for the bot to actually do something.
@@ -42,10 +47,6 @@ npm install discord.js
 npm install sqlite3@5.0.0
 ```
 Well done! You set up the Lesson Bot with self hosting! If you do not want to host it on your on system, follow [this guide](https://www.youtube.com/watch?v=e5Dyk3-4nio&ab_channel=1BestCsharpblog) on how to host it on an external website.
-4. Go back to the [Discord Developer Portal](https://discord.com/developers/applications/) and go on your application, then go to the "Bot" section on the right. Press copy under "Click to reveal token". This is a token which is exclusive to your bot and should be kept private. 
-5. Open up the `config.json` file and paste the token where it says "INSERT TOKEN HERE" inside the quotation marks. You can also insert your start and end period number (the minimum is 0 and the maximum is 10).
-6. Once this is done, type `node .` into the terminal and it should say "The bot is online!". To stop the code running either close the terminal or "Ctrl + C" on the terminal.
-If you want do not want to host it on your PC, please follow [this guide](https://www.youtube.com/watch?v=e5Dyk3-4nio&ab_channel=1BestCsharpblog) on how to host it on an external website.
 
 ## Setup
  Now, you have to setup things that would be **personal** to you. Follow these steps:
