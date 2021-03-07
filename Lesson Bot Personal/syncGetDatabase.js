@@ -7,13 +7,17 @@ const token = config.token;
 const prefix = config.prefix;
 const sqlite = require("sqlite3").verbose();
 let db = new sqlite.Database('./linksdb.db', sqlite.OPEN_READWRITE);
+const startPeriod = config.startPeriod;
+const startLoop = startPeriod;
+const endPeriod = config.endPeriod;
+const endLoop = endPeriod + 1;
 
-var links = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
-var value = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
-var subject = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
-var subjectGroup = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
-var teacher = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
-var times = [["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"],["empty","empty","empty","empty","empty","empty"]]
+var links = new Array(5).fill(0).map(() => new Array(11).fill(0));
+var value = new Array(5).fill(0).map(() => new Array(11).fill(0));
+var subject = new Array(5).fill(0).map(() => new Array(11).fill(0));
+var subjectGroup = new Array(5).fill(0).map(() => new Array(11).fill(0));
+var teacher = new Array(5).fill(0).map(() => new Array(11).fill(0));
+var times = new Array(5).fill(0).map(() => new Array(11).fill(0));
 var tempWho;
 
 function syncLinks() {
@@ -22,7 +26,7 @@ function syncLinks() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = 0; i < 6; i++){
+		for (var i = startLoop; i < endLoop; i++){
 			getDatabaseLinks(tempDay, i, dayCount3);
 		}
 	}
@@ -34,7 +38,7 @@ function syncTime() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = 0; i < 6; i++){
+		for (var i = startLoop; i < endLoop; i++){
 			getDatabaseTime(tempDay, i, dayCount3);
 		}
 	}
@@ -46,7 +50,7 @@ function syncSubject() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = 0; i < 6; i++){
+		for (var i = startLoop; i < endLoop; i++){
 			getDatabaseSubject(tempDay, i, dayCount3);
 		}
 	}
@@ -58,7 +62,7 @@ function syncTeacher() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = 0; i < 6; i++){
+		for (var i = startLoop; i < endLoop; i++){
 			getDatabaseTeacher(tempDay, i, dayCount3);
 		}
 	}

@@ -11,6 +11,10 @@ const embed = require("./embed");
 const sqlite = require("sqlite3").verbose();
 let db = new sqlite.Database('./linksdb.db', sqlite.OPEN_READWRITE);
 let tempLink, tempDay, tempPeriod, tempEmbed, finalMessage, commandCount, dayCount, dayCount2, dayCount3, tempWho;
+const startPeriod = config.startPeriod;
+const startLoop = startPeriod;
+const endPeriod = config.endPeriod;
+const endLoop = endPeriod + 1;
 
 
 
@@ -31,10 +35,19 @@ bot.on('message', message =>{
 	database.syncTime();
 	database.syncSubject();
 	database.syncTeacher();
-	
+	function generateEmbedFields(num1, num2, dayCount) {
+    
+		let embedFields = [];
+		while (parseInt(num1) <= parseInt(num2)) {
+			embedFields.push({name : "Period " + parseInt(num1) + " | " + database.times[dayCount][num1], value: database.value[dayCount][num1]});
+			num1++;
+		}
+		
+		return embedFields;
+	}
 	function generateEmbedAll(dayCount) {
 		tempDay = database.getDay(dayCount);
-		for (var i = 0; i < 6; i++) {
+		for (var i = startLoop; i < endLoop; i++) {
 			if (database.links[dayCount][i] == "free") {
 				database.value[dayCount][i] = "Free Period!";
 			} else if (database.links[dayCount][i] == "exam") {
@@ -43,17 +56,11 @@ bot.on('message', message =>{
 				database.value[dayCount][i] = database.subjectGroup[dayCount][i] + ' ' + database.subject[dayCount][i] + ' ' + database.teacher[dayCount][i] + '\n' + database.links[dayCount][i];
 			}
 		}
+		let options = generateEmbedFields(startPeriod, endPeriod, dayCount);
 		tempEmbed = new Discord.MessageEmbed()
 			.setColor('#0099ff')
 			.setTitle(tempDay)	
-			.addFields(
-				{ name: 'Period 0 | ' + database.times[dayCount][0], value: database.value[dayCount][0] },
-				{ name: 'Period 1 | ' + database.times[dayCount][1], value: database.value[dayCount][1] },
-				{ name: 'Period 2 | ' + database.times[dayCount][2], value: database.value[dayCount][2] },
-				{ name: 'Period 3 | ' + database.times[dayCount][3], value: database.value[dayCount][3] },
-				{ name: 'Period 4 | ' + database.times[dayCount][4], value: database.value[dayCount][4] },
-				{ name: 'Period 5 | ' + database.times[dayCount][5], value: database.value[dayCount][5] },
-			);
+			.addFields(options);
 			message.channel.send(tempEmbed);
 	
 	}
@@ -89,6 +96,8 @@ bot.on('message', message =>{
 		}
 		if (args[2] == undefined) {
 			return message.channel.send("You did not provide a **period number**! Use the `.help change` command to find out how to use this command.")
+		} else if (args[2] < startPeriod || args[2] > endPeriod) {
+			return message.channel.send("You did not provide a **valid period number**! Use the `.help change` command to find out how to use this command.")
 		}
 		if (args[3] == undefined) {
 			return message.channel.send("You did not provide a **the thing you want to change to**! Use the `.help change` command to find out how to use this command.")
@@ -145,7 +154,7 @@ bot.on('message', message =>{
 		if (args [0] == undefined){ 
 			generateEmbedAll(dayCount);
 		} else {
-			if (args[0] < 6 && args[0] > -1) {
+			if (args[0] < endLoop && args[0] >= startLoop) {
 				generateEmbedSpecific(dayCount, args[0]);	
 			} else {
 				message.channel.send("Invalid Period Number!")
@@ -161,7 +170,7 @@ bot.on('message', message =>{
 			generateEmbedAll(dayCount);
 		} else {
 
-			if (args[0] < 6 && args[0] > -1) {
+			if (args[0] < endLoop && args[0] >= startLoop) {
 				generateEmbedSpecific(dayCount, args[0]);	
 			} else {
 				message.channel.send("Invalid Period Number!")
@@ -178,7 +187,7 @@ bot.on('message', message =>{
 			generateEmbedAll(dayCount);
 		} else {
 
-			if (args[0] < 6 && args[0] > -1) {
+			if (args[0] < endLoop && args[0] >= startLoop) {
 				generateEmbedSpecific(dayCount, args[0]);	
 			} else {
 				message.channel.send("Invalid Period Number!")
@@ -195,7 +204,7 @@ bot.on('message', message =>{
 			generateEmbedAll(dayCount);
 		} else {
 
-			if (args[0] < 6 && args[0] > -1) {
+			if (args[0] < endLoop && args[0] >= startLoop) {
 				generateEmbedSpecific(dayCount, args[0]);	
 			} else {
 				message.channel.send("Invalid Period Number!")
@@ -209,7 +218,7 @@ bot.on('message', message =>{
 		if (args [0] == undefined){ 
 			generateEmbedAll(dayCount);
 		} else {
-			if (args[0] < 6 && args[0] > -1) {
+			if (args[0] < endLoop && args[0] >= startLoop) {
 				generateEmbedSpecific(dayCount, args[0]);	
 			} else {
 				message.channel.send("Invalid Period Number!")
@@ -252,6 +261,13 @@ bot.on('message', message =>{
 		message.channel.send(embed.changeLogEmbed);
 		
 	}
+	if (command == 'changelogleg') {
+		if (!message.content.startsWith(prefix)) {
+			return;
+		}
+		message.channel.send(embed.changeLogLegEmbed);
+		
+	}
 
 	if (command == 'who') {
 		if (!message.content.startsWith(prefix)) {
@@ -266,7 +282,7 @@ bot.on('message', message =>{
 		}
 		if (args[2] == undefined) {
 			return message.channel.send("You did not provide a **period**! Use the `.help` command to find out how to use this command.")
-		} else if (args[2] < 0 || args[2] > 6) {
+		} else if (args[2] < startPeriod || args[2] > endPeriod) {
 			return message.channel.send("You did not provide a **valid period**! Use the `.help` command to find out how to use this command.")
 		}
 		if (args[0] == "time") {
@@ -475,23 +491,6 @@ bot.on('message', message =>{
 		}  else {
 			return message.channel.send("You did not provide a **valid type**! Use the `.help` command to find out how to use this command.")
 		}
-	}
-
-	if (command == 'spam') {
-		if (!message.content.startsWith(prefix)) {
-			return;
-		}
-	
-		app = express();
-
-		cron.schedule("*/1 * * * * *", function() { 
-		console.log("1 second")
-			bot.users.cache.get(message.author.id).send('annoying you');
-		}); 
-		
-		app.listen(3000); 
-	
-	
 	}
 
 })		

@@ -10,17 +10,29 @@ const database = require("./syncGetDatabase");
 const embed = require("./embed");
 const sqlite = require("sqlite3").verbose();
 let db = new sqlite.Database('./linksdb.db', sqlite.OPEN_READWRITE);
+const startPeriod = config.startPeriod;
+const startLoop = startPeriod;
+const endPeriod = config.endPeriod;
+const endLoop = endPeriod + 1;
 
 var info = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Lesson Bot Personal v1.00:')
 	.addFields(
 		{name: 'Information:' , value: 'This is a Discord Bot used to help people keep track of their online school lessons and their Zoom Links. Even when online school ends, it can be used as a normal timetable.\nUse the `.help` command to see a full list of commands!'},
-		{name: 'Changelog:' , value: 'Use the `.changelog` command to view the full changelog.' },
+		{name: 'Changelog:' , value: 'Use the `.changelog` command to view the full changelog. Use the `.changelogleg` to view the Legacy changelog' },
 		{name: 'Github:' , value: 'The open source files of this bot can be found at "https://github.com/sc0rps/Lesson-Bot".' }
 	)
 
 var changeLogEmbed = new Discord.MessageEmbed()
+	.setColor('#0099ff')
+	.setTitle('Lesson Bot Changelog:')	
+	.addFields(
+		{ name: 'v1.00 (06/03/21):' , value: 'First ever release of Lesson Bot which users can host themselves.'},
+		{ name: 'v1.01 (06/03/21):' , value: 'Users can now change the start and end period of the day. Head over to config.json and adjust the startPeriod and endPeriod accordingly. The minimum period is 0 and the maximum period is 10.'}
+	);
+
+var changeLogLegEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
 	.setTitle('Lesson Bot Changelog:')	
 	.addFields(
@@ -36,7 +48,7 @@ var changeLogEmbed = new Discord.MessageEmbed()
 		{ name: 'v1.22 (05/02/21):' , value: 'You can now change all of the values for a specific period. Use the .help change command for more info.\nAdded the new .changelog command which shows all previous changelogs and their dates.\nCorrecting some string errors.'},
 		{ name: 'v1.23 (13/02/21):' , value: 'Made it so only a certain role can do commands.\nImproved the layout for showing all the links in a day.\nFixed the bug where any letter or prefix can be used in the commands.'},
 		{ name: 'v1.24 (20/02/21):' , value: 'You can find out who changed something. Use the `.help who` command to find out more.\nSplit the code up internally by seperating functions in their own `.js` files.\nRemoved the feature where only a certain role can do commands as this can cause problems in other servers.\nChanged the message that would appear once changing something.\nChanged how the embeds look.\nMerged the `.future` command into the `.info` command.'},
-	);
+	);	
 
 var help = new Discord.MessageEmbed()
 	.setColor('#0099ff')

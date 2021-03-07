@@ -7,6 +7,10 @@ const token = config.token;
 const prefix = config.prefix;
 const sqlite = require("sqlite3").verbose();
 let db = new sqlite.Database('./linksdb.db', sqlite.OPEN_READWRITE);
+const startPeriod = config.startPeriod;
+const startLoop = startPeriod;
+const endPeriod = config.endPeriod;
+const endLoop = endPeriod + 1;
 
 function linkChange(type, day, period, link, user) {
 if (day == "monday") {

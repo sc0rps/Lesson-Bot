@@ -13,6 +13,10 @@ const cron = require("node-cron");
 const express = require("express"); 
 let db = new sqlite.Database('./linksdb.db', sqlite.OPEN_READWRITE);
 let tempLink, tempDay, tempPeriod, tempEmbed, finalMessage, commandCount, dayCount, dayCount2, dayCount3, tempWho;
+const startPeriod = config.startPeriod;
+const startLoop = startPeriod;
+const endPeriod = config.endPeriod;
+const endLoop = endPeriod + 1;
 
 const Discord = require('discord.js');
 const client = new Discord.Client();

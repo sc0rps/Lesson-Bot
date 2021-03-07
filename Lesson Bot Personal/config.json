@@ -1,4 +1,6 @@
 {
 	"prefix": ".",
-	"token": "INSERT TOKEN HERE"  
+	"token": "INSERT TOKEN HERE",
+	"startPeriod": 1,
+	"endPeriod" : 6
 }
