@@ -30,7 +30,10 @@ bot.on('ready', () =>{
 bot.on('message', message =>{
 	if (message.channel.type == 'dm') return;
 	const args = message.content.slice(prefix.length).trim().split(' ');
+	
+
 	const command = args.shift().toLowerCase();
+
 	database.syncLinks();
 	database.syncTime();
 	database.syncSubject();
@@ -115,7 +118,12 @@ bot.on('message', message =>{
 				message.channel.send("You did not provide a **valid day**! Use the `.help change` command to find out how to use this command.")
 			} else {
 				generateEmbedSpecific(dayCount2, args[2]);
-				message.channel.send(change.subjectChange(args[0], args[1], args[2], args[3], args[4], args[5], message.author.username));
+				var argsSubject = '';
+				for (var i = 3; i < args.length; i++) {
+					argsSubject = argsSubject + ' ' + args[i];
+				}
+				argsSubject = argsSubject.trim();
+				message.channel.send(change.subjectChange(args[0], args[1], args[2], args[3], args[4], argsSubject, message.author.username));
 			}	
 		} else if (args[0] == "teacher") {
 			dayCount2 = database.getDayCount(args[1])
@@ -123,7 +131,12 @@ bot.on('message', message =>{
 				message.channel.send("You did not provide a **valid day**! Use the `.help change` command to find out how to use this command.")
 			} else {
 				generateEmbedSpecific(dayCount2, args[2]);
-				message.channel.send(change.teacherChange(args[0], args[1], args[2], args[3], args[4], args[5], message.author.username));		
+				var argsTeacher = '';
+				for (var i = 3; i < args.length; i++) {
+					argsTeacher = argsTeacher + ' ' + args[i];
+				}
+				argsTeacher = argsTeacher.trim();
+				message.channel.send(change.teacherChange(args[0], args[1], args[2], args[3], args[4], argsTeacher, message.author.username));		
 			}	
 		} else if (args[0] == "link") {
 			dayCount2 = database.getDayCount(args[1])
@@ -131,7 +144,12 @@ bot.on('message', message =>{
 				message.channel.send("You did not provide a **valid day**! Use the `.help change` command to find out how to use this command.")
 			} else {
 				generateEmbedSpecific(dayCount2, args[2]);
-				message.channel.send(change.linkChange(args[0], args[1], args[2], args[3], message.author.username));	
+				var argsLinks = '';
+				for (var i = 3; i < args.length; i++) {
+					argsLinks = argsLinks + ' ' + args[i];
+				}
+				argsLinks = argsLinks.trim();
+				message.channel.send(change.linkChange(args[0], args[1], args[2], argsLinks, message.author.username));	
 			}	
 		} else if (args[0] == "all") {
 			dayCount2 = database.getDayCount(args[1])
@@ -139,7 +157,12 @@ bot.on('message', message =>{
 				message.channel.send("You did not provide a **valid day**! Use the `.help change` command to find out how to use this command.")
 			} else {
 				generateEmbedSpecific(dayCount2, args[2]);	
-				message.channel.send(change.allChange(args[1], args[2], args[3], args[4], args[5], args[6], args[7], args[8], message.author.username));	
+				var argsLinks = '';
+				for (var i = 8; i < args.length; i++) {
+					argsLinks = argsLinks + ' ' + args[i];
+				}
+				argsLinks = argsLinks.trim();
+				message.channel.send(change.allChange(args[1], args[2], args[3], args[4], args[5], args[6], args[7], argsLinks, message.author.username));	
 			}	
 		} else {
 			return message.channel.send("You did not provide a **valid type to change**! Use the `.help change` command to find out how to use this command.")

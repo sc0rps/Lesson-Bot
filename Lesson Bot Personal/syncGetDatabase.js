@@ -26,7 +26,7 @@ function syncLinks() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = startLoop; i < endLoop; i++){
+		for (var i = 0; i < 11; i++){
 			getDatabaseLinks(tempDay, i, dayCount3);
 		}
 	}
@@ -38,7 +38,7 @@ function syncTime() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = startLoop; i < endLoop; i++){
+		for (var i = 0; i < 11; i++){
 			getDatabaseTime(tempDay, i, dayCount3);
 		}
 	}
@@ -50,7 +50,7 @@ function syncSubject() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = startLoop; i < endLoop; i++){
+		for (var i = 0; i < 11; i++){
 			getDatabaseSubject(tempDay, i, dayCount3);
 		}
 	}
@@ -62,7 +62,7 @@ function syncTeacher() {
 
 	for (dayCount3 = 0; dayCount3 < 5; dayCount3++) {
 		tempDay = getDay(dayCount3);
-		for (var i = startLoop; i < endLoop; i++){
+		for (var i = 0; i < 11; i++){
 			getDatabaseTeacher(tempDay, i, dayCount3);
 		}
 	}

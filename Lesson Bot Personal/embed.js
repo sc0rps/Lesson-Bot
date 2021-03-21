@@ -26,7 +26,7 @@ var info = new Discord.MessageEmbed()
 
 var changeLogEmbed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
-	.setTitle('Lesson Bot Changelog:')	
+	.setTitle('Lesson Bot Changelog Legacy:')	
 	.addFields(
 		{ name: 'v1.00 (06/03/21):' , value: 'First ever release of Lesson Bot which users can host themselves.'},
 		{ name: 'v1.01 (06/03/21):' , value: 'Users can now change the start and end period of the day. Head over to config.json and adjust the startPeriod and endPeriod accordingly. The minimum period is 0 and the maximum period is 10.'}
@@ -92,4 +92,4 @@ var extra = new Discord.MessageEmbed()
 	.setDescription('O4 Astronomy Tuesday Period 4 Mr Annal: https://zoom.us/j/95285341603?pwd=VVhVYzlzWjdsdUtiZmN0NDBTb0MrZz09&from=msft#success \nO4 Astronomy Friday Period 1 Mr Annal: https://zoom.us/j/92739342615?pwd=YWFMV3V4ZmlJelR6OEJKZm5uQWpndz09&from=msft#success ');			
 
 
-module.exports = { info, help, helpChange, extra, changeLogEmbed, helpWho}; 
+module.exports = { info, help, helpChange, extra, changeLogEmbed, changeLogLegEmbed, helpWho}; 
