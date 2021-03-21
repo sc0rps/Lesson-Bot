@@ -17,7 +17,7 @@ const endLoop = endPeriod + 1;
 
 var info = new Discord.MessageEmbed()
 	.setColor('#0099ff')
-	.setTitle('Lesson Bot Personal v1.00:')
+	.setTitle('Lesson Bot Personal v1.02:')
 	.addFields(
 		{name: 'Information:' , value: 'This is a Discord Bot used to help people keep track of their online school lessons and their Zoom Links. Even when online school ends, it can be used as a normal timetable.\nUse the `.help` command to see a full list of commands!'},
 		{name: 'Changelog:' , value: 'Use the `.changelog` command to view the full changelog. Use the `.changelogleg` to view the Legacy changelog' },
@@ -30,6 +30,7 @@ var changeLogEmbed = new Discord.MessageEmbed()
 	.addFields(
 		{ name: 'v1.00 (06/03/21):' , value: 'First ever release of Lesson Bot which users can host themselves.'},
 		{ name: 'v1.01 (06/03/21):' , value: 'Users can now change the start and end period of the day. Head over to config.json and adjust the startPeriod and endPeriod accordingly. The minimum period is 0 and the maximum period is 10.'}
+		{ name: 'v1.03 (21/03/21):' , value: 'Fixed bugs'},
 	);
 
 var changeLogLegEmbed = new Discord.MessageEmbed()
