@@ -29,8 +29,8 @@ var changeLogEmbed = new Discord.MessageEmbed()
 	.setTitle('Lesson Bot Changelog Legacy:')	
 	.addFields(
 		{ name: 'v1.00 (06/03/21):' , value: 'First ever release of Lesson Bot which users can host themselves.'},
-		{ name: 'v1.01 (06/03/21):' , value: 'Users can now change the start and end period of the day. Head over to config.json and adjust the startPeriod and endPeriod accordingly. The minimum period is 0 and the maximum period is 10.'}
-		{ name: 'v1.03 (21/03/21):' , value: 'Fixed bugs'},
+		{ name: 'v1.01 (06/03/21):' , value: 'Users can now change the start and end period of the day. Head over to config.json and adjust the startPeriod and endPeriod accordingly. The minimum period is 0 and the maximum period is 10.'},
+		{ name: 'v1.03 (21/03/21):' , value: 'Fixed bugs'}
 	);
 
 var changeLogLegEmbed = new Discord.MessageEmbed()
